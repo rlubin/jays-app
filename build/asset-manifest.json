@@ -1,22 +1,18 @@
 {
   "files": {
-    "main.css": "/jays-app/static/css/main.b100e6da.chunk.css",
-    "main.js": "/jays-app/static/js/main.5e7312f5.chunk.js",
-    "main.js.map": "/jays-app/static/js/main.5e7312f5.chunk.js.map",
+    "main.js": "/jays-app/static/js/main.7685bcdf.chunk.js",
+    "main.js.map": "/jays-app/static/js/main.7685bcdf.chunk.js.map",
     "runtime-main.js": "/jays-app/static/js/runtime-main.0ebd1d25.js",
     "runtime-main.js.map": "/jays-app/static/js/runtime-main.0ebd1d25.js.map",
-    "static/js/2.d6a4452e.chunk.js": "/jays-app/static/js/2.d6a4452e.chunk.js",
-    "static/js/2.d6a4452e.chunk.js.map": "/jays-app/static/js/2.d6a4452e.chunk.js.map",
+    "static/js/2.0345ee5d.chunk.js": "/jays-app/static/js/2.0345ee5d.chunk.js",
+    "static/js/2.0345ee5d.chunk.js.map": "/jays-app/static/js/2.0345ee5d.chunk.js.map",
     "index.html": "/jays-app/index.html",
-    "precache-manifest.5f16c0103369059dfe317954faae6623.js": "/jays-app/precache-manifest.5f16c0103369059dfe317954faae6623.js",
-    "service-worker.js": "/jays-app/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/jays-app/static/css/main.b100e6da.chunk.css.map",
-    "static/media/logo.svg": "/jays-app/static/media/logo.25bf045c.svg"
+    "precache-manifest.29430b5e619dedef0f0d3dc83920f552.js": "/jays-app/precache-manifest.29430b5e619dedef0f0d3dc83920f552.js",
+    "service-worker.js": "/jays-app/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.0ebd1d25.js",
-    "static/js/2.d6a4452e.chunk.js",
-    "static/css/main.b100e6da.chunk.css",
-    "static/js/main.5e7312f5.chunk.js"
+    "static/js/2.0345ee5d.chunk.js",
+    "static/js/main.7685bcdf.chunk.js"
   ]
 }
