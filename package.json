@@ -6,9 +6,9 @@
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
+    "mathjax": "^2.7.7",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-hotkeys": "^2.0.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {

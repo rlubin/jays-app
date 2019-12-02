@@ -1,5 +1,3 @@
-make enter hit calculate
-
 add mathjax to make equations look better
 
 add thesaurus
