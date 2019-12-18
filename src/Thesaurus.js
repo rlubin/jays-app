@@ -10,12 +10,21 @@ class Thesaurus extends React.Component {
     super(props);
     this.state = {
       word: "",
-      synonyms: []
+      synonyms: [],
+      queries: 0
     };
   }
 
   handleChange = event => {
     this.setState({ word: event.target.value });
+  };
+
+  queryCounter = () => {
+    setInterval(() => {
+      if (new Date().getHours() === 0) {
+        this.setState({ queries: 500 });
+      }
+    }, 60000);
   };
 
   // using MERRIAM-WEBSTER API
@@ -28,17 +37,21 @@ class Thesaurus extends React.Component {
         `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${this.state.word}?key=862e489f-c41f-4b0a-bdee-fd6ae20eeb16`
       );
       const data = await response.json();
-      for (let i in data) {
-        for (let j in data[i]["meta"]["syns"][0]) {
-          const newSynonyms = this.state.synonyms;
-          newSynonyms.push(data[i]["meta"]["syns"][0][j]);
-          this.setState({
-            synonyms: newSynonyms
-          });
+      if (data !== {}) {
+        for (let i in data) {
+          for (let j in data[i]["meta"]["syns"][0]) {
+            const newSynonyms = this.state.synonyms;
+            newSynonyms.push(data[i]["meta"]["syns"][0][j]);
+            this.setState({
+              synonyms: newSynonyms
+            });
+          }
         }
       }
     })();
     event.preventDefault();
+    const queriesLeft = this.state.queries - 1;
+    this.setState({ queries: queriesLeft });
   };
 
   render() {
@@ -46,7 +59,7 @@ class Thesaurus extends React.Component {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Typography component="h1" variant="h2">
-          Thesaurus
+          Thesaurus({this.state.queries})
         </Typography>
         <form onSubmit={this.findSynonym}>
           <TextField
