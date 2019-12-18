@@ -1,2 +1,0 @@
-percentage change
-  get mathjax working so equations
