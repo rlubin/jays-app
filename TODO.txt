@@ -1,5 +1,2 @@
-add mathjax to make equations look better
-
-add thesaurus
-
-make responsive
+percentage change
+  get mathjax working so equations

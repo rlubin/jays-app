@@ -6,9 +6,10 @@
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
-    "mathjax": "^2.7.7",
+    "flexbox-react": "^4.4.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-mathjax": "^1.0.1",
     "react-scripts": "3.2.0"
   },
   "scripts": {

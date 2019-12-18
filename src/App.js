@@ -1,12 +1,14 @@
 import React from "react";
 import PercentageChange from "./PercentageChange";
-// import Thesaurus from "./Thesaurus";
+import Thesaurus from "./Thesaurus";
+import Flexbox from "flexbox-react";
 
 function App() {
   return (
-    <React.Fragment>
+    <Flexbox flexDirection="row">
       <PercentageChange></PercentageChange>
-    </React.Fragment>
+      <Thesaurus></Thesaurus>
+    </Flexbox>
   );
 }
 
