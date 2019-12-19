@@ -10,7 +10,8 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-mathjax": "^1.0.1",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "word-list-json": "^0.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -10,8 +10,8 @@ class Thesaurus extends React.Component {
     super(props);
     this.state = {
       word: "",
-      synonyms: [],
-      queries: 0
+      synonyms1: [],
+      synonyms2: []
     };
   }
 
@@ -19,19 +19,11 @@ class Thesaurus extends React.Component {
     this.setState({ word: event.target.value });
   };
 
-  queryCounter = () => {
-    setInterval(() => {
-      if (new Date().getHours() === 0) {
-        this.setState({ queries: 500 });
-      }
-    }, 60000);
-  };
-
   // using MERRIAM-WEBSTER API
   // dictionary key 8869e4dc-d677-4abb-8712-74c7f90a2116
   // theasurus key 862e489f-c41f-4b0a-bdee-fd6ae20eeb16
   findSynonym = event => {
-    this.setState({ synonyms: [] });
+    this.setState({ synonyms1: [], synonyms2: [] });
     (async () => {
       const response = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${this.state.word}?key=862e489f-c41f-4b0a-bdee-fd6ae20eeb16`
@@ -40,18 +32,26 @@ class Thesaurus extends React.Component {
       if (data !== {}) {
         for (let i in data) {
           for (let j in data[i]["meta"]["syns"][0]) {
-            const newSynonyms = this.state.synonyms;
+            const newSynonyms = this.state.synonyms1;
             newSynonyms.push(data[i]["meta"]["syns"][0][j]);
             this.setState({
-              synonyms: newSynonyms
+              synonyms1: newSynonyms
             });
           }
         }
       }
     })();
+    (async () => {
+      const response = await fetch(``);
+      const data = await response.json();
+      console.log(data);
+      // const newSynonyms = this.state.synonyms2;
+      // newSynonyms.push(data[i]["meta"]["syns"][0][j]);
+      // this.setState({
+      //   synonyms2: newSynonyms
+      // });
+    })();
     event.preventDefault();
-    const queriesLeft = this.state.queries - 1;
-    this.setState({ queries: queriesLeft });
   };
 
   render() {
@@ -59,7 +59,7 @@ class Thesaurus extends React.Component {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Typography component="h1" variant="h2">
-          Thesaurus({this.state.queries})
+          Thesaurus
         </Typography>
         <form onSubmit={this.findSynonym}>
           <TextField
@@ -72,13 +72,18 @@ class Thesaurus extends React.Component {
             id="word"
             label="Word"
             name="word"
-            autoComplete="word"
           />
+
           <Button type="submit" fullWidth variant="contained" color="primary">
             Synonyms
           </Button>
         </form>
-        {this.state.synonyms.map(word => (
+        {this.state.synonyms1.map(word => (
+          <Typography component="h1" variant="h5" key={word}>
+            {word}
+          </Typography>
+        ))}
+        {this.state.synonyms2.map(word => (
           <Typography component="h1" variant="h5" key={word}>
             {word}
           </Typography>

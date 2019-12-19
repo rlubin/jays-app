@@ -1,0 +1,2 @@
+theasurus
+  add another dictionary api
