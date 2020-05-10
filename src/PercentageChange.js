@@ -13,11 +13,11 @@ class PercentageChange extends React.Component {
       initPrice: "",
       finalPrice: "",
       formula: "",
-      change: ""
+      change: "",
     };
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     if (event.target.name === "initPrice") {
       this.setState({ initPrice: event.target.value });
     } else {
@@ -25,7 +25,7 @@ class PercentageChange extends React.Component {
     }
   };
 
-  calculate = event => {
+  calculate = (event) => {
     const v1 = parseFloat(this.state.initPrice);
     const v2 = parseFloat(this.state.finalPrice);
     let result;
@@ -50,12 +50,12 @@ class PercentageChange extends React.Component {
 
   render() {
     return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="lg">
         <CssBaseline />
-        <Typography component="h1" variant="h2">
-          %Change
+        <Typography component="h1" variant="h2" align="center">
+          % Change
         </Typography>
-        <form onSubmit={this.calculate}>
+        <form onSubmit={this.calculate} align="center">
           <TextField
             value={this.state.initPrice}
             onChange={this.handleChange}
@@ -82,18 +82,24 @@ class PercentageChange extends React.Component {
             id="finalPrice"
             autoComplete="finalPrice"
           />
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <Button
+            size="large"
+            type="submit"
+            variant="contained"
+            color="primary"
+            align="center"
+          >
             Calculate
           </Button>
         </form>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h4" align="center">
           <MathJax.Provider>
             <div>
               <MathJax.Node inline formula={this.state.formula} />
             </div>
           </MathJax.Provider>
         </Typography>
-        <Typography component="h1" variant="h3">
+        <Typography component="h1" variant="h4" align="center">
           {this.state.change}
         </Typography>
       </Container>
