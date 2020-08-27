@@ -1,3 +1,0 @@
-center component on screen
-
-make component a little larger
